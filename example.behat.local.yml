@@ -1,0 +1,10 @@
+default:
+  extensions:
+    Behat\MinkExtension:
+      base_url: 'http://yoursite.com'
+      selenium2:
+        wd_host: http://yoursite.com/wd/hub
+        capabilities: {"browser": "firefox"}
+    Drupal\DrupalExtension:
+      drupal:
+        drupal_root: '/var/www/yoursite/www'
