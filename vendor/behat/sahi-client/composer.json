@@ -1,0 +1,42 @@
+{
+    "name":         "behat/sahi-client",
+    "description":  "Sahi.js client for PHP 5.3",
+    "keywords":     ["browser", "JS", "testing"],
+    "homepage":     "http://sahi.co.in/w/",
+    "type":         "library",
+    "license":      "MIT",
+    "authors":      [
+        {
+            "name":      "Konstantin Kudryashov",
+            "email":     "ever.zet@gmail.com",
+            "homepage":  "http://everzet.com"
+        }
+    ],
+
+    "require": {
+        "php":                 ">=5.3.1",
+        "kriswallsmith/buzz":  "~0.7"
+    },
+
+    "require-dev": {
+        "symfony/phpunit-bridge": "~2.7"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Behat\\SahiClient\\":  "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\Behat\\SahiClient\\":  "tests"
+        }
+    },
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.2.x-dev"
+        }
+    }
+}

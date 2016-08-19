@@ -1,0 +1,43 @@
+default:
+  suites:
+    default:
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      browser_name: 'chrome'
+      javascript_session: selenium2
+      selenium2:
+        wd_host: http://127.0.0.1:4444/wd/hub
+    Drupal\DrupalExtension:
+      selectors:
+        message_selector: '.messages'
+        error_message_selector: '.messages.messages.error'
+        success_message_selector: '.messages.messages.status'
+      blackbox: ~
+      api_driver: 'drupal'
+      drush:
+        alias: 'self'
+      drupal:
+        drupal_root: '/var/www/cfd7/www'
+      region_map:
+        footer: "#footer"
+        sidebar_left: "#left"
+        main_content: "#main-content"
+      text:
+        username_field: "E-mail or username"
+
+local:
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://cfd7.xeno.dev
+
+jenkins:
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://cfd7.ci.xenostaging.com
