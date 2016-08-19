@@ -24,7 +24,7 @@ default:
       drush:
         alias: 'self'
       drupal:
-        drupal_root: '/var/www/cfd7/www'
+        drupal_root: '/var/www/site-name/www'
       region_map:
         footer: "#footer"
         sidebar_left: "#left"
@@ -35,9 +35,9 @@ default:
 local:
   extensions:
     Behat\MinkExtension:
-      base_url: http://cfd7.xeno.dev
+      base_url: http://site-name.example.dev
 
 jenkins:
   extensions:
     Behat\MinkExtension:
-      base_url: http://cfd7.ci.xenostaging.com
+      base_url: http://site-name.ci.example.com
